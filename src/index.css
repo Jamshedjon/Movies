@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CAROUSEL */
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.card {
+    scroll-snap-align: start;
+    border-radius: 0px, 0px, 8px, 8px;
+    min-width: 220px;
+}
+/* container */
+@layer {
+    .container {
+        @apply max-w-6xl mx-auto px-8;
+    }
+}
+
+/* roots */
+:root {
+    --Dark-Blue: #10141e;
+    --Greyish-Blue: #5a698f;
+    --Pure-White: #ffffff;
+    --Red: #fc4747;
+    --Semi-Dark-Blue: #161d2f;
+}
+#root {
+    background: var(--Dark-Blue, #10141e);
+}
+
+body {
+    height: 100vh;
+    color: var(--Pure-White);
+    font-family: "Outfit", sans-serif;
+}
+.navbar {
+    border-radius: 20px;
+    background: var(--Semi-Dark-Blue, #161d2f);
+}
+.hover:hover {
+    fill: var(--Red, #fc4747);
+}
+.iconColor {
+    fill: var(--Greyish-Blue);
+}
+a.active svg {
+    fill: var(--Pure-White);
+}
+input {
+    outline: 0 !important;
+    border-width: 0 0 2px !important;
+}
+input:focus {
+    border-color: var(--Greyish-Blue);
+}
+
+.project__item:hover .mask {
+    display: block;
+}
+.project__item .mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 8.7rem;
+    left: 0;
+    right: 0;
+    background: #151515;
+    opacity: 75%;
+}
